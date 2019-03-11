@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Tasks</title>
+	<style type="text/css">
+		h1, h2 {
+			background-color: rgb(117, 114, 114);
+			padding: 20px;
+			color: aliceblue;
+			margin: 0px;
+			text-align: center;
+			tex
+		}
+		.fa-trash {
+        	color: #05FFCF;
+		}
+		h2 {
+			font-size: 20px;
+		}
+		.a {
+  			transform: rotate(180deg);
+			-ms-transform: rotate(180deg);
+			-moz-transform: rotate(180deg);
+  			-webkit-transform: rotate(180deg);
+		}
+	</style>
+<body>
+	<header>
+		<h1>Todo App</h1>
+		<h1>/ index /</h1>
+	</header>
+	{% block task_delete %}
+	{% endblock task_delete %}
+	<footer>
+		<h2>Copyleft <span class='a'>&copy;</span> 2019, Todo App Demo by Iva G. </h2>
+	</footer>
+</body>
+</html>

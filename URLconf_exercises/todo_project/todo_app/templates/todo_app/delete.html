@@ -1,0 +1,26 @@
+{% extends "todo_app/base.html" %}
+
+{% block task_delete %}
+
+  <main>
+    <div>
+      <input type="text" name="task_title" placeholder="please, enter a task title...">
+      <button>Add</button>
+    </div>
+    <div>
+      <ul>
+        {# using https://docs.djangoproject.com/en/2.1/ref/templates/builtins/#for-empty #}
+        {% for task in tasks %}
+          {% if task.id == taskn %}
+            <li><del>{{task}}</del><a href="/todos/delete/{{task.id}}"><i class="fa fa-trash"></i></a></li>
+          {% else %}
+            <li>{{task}}<a href="/todos/delete/{{task.id}}"><i class="fa fa-trash"></i></a></li>
+          {% endif %}
+        {% empty %}
+          <li>No tasks!</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </main>
+
+  {% endblock task_delete %}

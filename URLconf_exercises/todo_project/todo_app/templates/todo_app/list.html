@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Tasks</title>
+	<!-- <link rel="stylesheet" type="text/css" href="css/todo_app/main.css"> -->
+	<style>
+		#mytasks {
+    		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    		border-collapse: collapse;
+    		width: 100%;
+  		}
+  
+  		#mytasks td, #mytasks th {
+   			border: 1px solid #ddd;
+    		padding: 8px;
+  		}
+  
+  		#mytasks tr:nth-child(even){background-color: #f2f2f2;}
+  
+  		#mytasks tr:hover {background-color: #ddd;}
+  
+  		#mytasks th {
+    		padding-top: 12px;
+   			padding-bottom: 12px;
+    		text-align: left;
+    		background-color: lightseagreen;
+    		color: white;
+		  }
+		  h1 {
+			  text-align: center;
+			  background-color:burlywood;
+			  font-size: 30px;
+			  padding: 40px;
+			  /* max-width: 80%; */
+			  vertical-align: middle;
+			  margin: 10px;
+		  }
+	</style>
+</head>
+<body>
+	<h1>{{page_title}}</h1>
+	<table id="mytasks">
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Due date</th>
+			<th>End date</th>
+			<!-- <th>Created</th> -->
+		</tr>
+			{% for task in tasks %}
+		<tr>
+			<td>{{ task.id }}</td>
+			<td>{{ task.title }}</td>
+			<td>{{ task.description }}</td>
+			<td>{{ task.due | date:"d.m.Y" }}</td>
+			<td>{{ task.end | date:"d.m.Y" }}</td>
+			<!-- <td>{{ task.created }}</td> -->
+		</tr>
+		{% endfor %}
+	</table>
+</body>
